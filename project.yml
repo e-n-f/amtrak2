@@ -1,5 +1,5 @@
 _prefs: 
-  mapid: enf.469567b0
+  mapid: enf.522e1931
   saveCenter: false
 _properties: 
   bridge: 
@@ -21,7 +21,7 @@ layers: null
 maxzoom: 22
 minzoom: 0
 name: Amtrak 188 speeds
-source: "mapbox:///mapbox.mapbox-streets-v5,enf.3y5y7gb9"
+source: "mapbox:///mapbox.mapbox-streets-v5,enf.bezpk3xr"
 styles: 
   - style.mss
   - labels.mss

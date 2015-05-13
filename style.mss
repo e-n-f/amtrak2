@@ -22,7 +22,7 @@
 
 #amtrak512all {
    
-  //[RouteName='Northeast Regional'] {
+  [RouteName='Northeast Regional'] {
     //[TrainNum != '188'] {
   
      marker-width: [sqrt]*[sqrt]*.5;
@@ -36,15 +36,18 @@
   text-size: 10;
   //text-size: 20;
   //text-avoid-edges: true;
-  text-placement-type: list;
+  //text-placement-type: list;
       //text-allow-overlap: true;
 [TrainNum='188'] {
       marker-fill: #FF0000;
       marker-opacity: 1.000;
       text-dy: 40;
       text-size: 20;
+      text-label-position-tolerance: 100;
+      //text-allow-overlap: true;
       [Velocity='106'] { text-dy: -40; }
    }
+    }
 }
 // Languages: name (local), name_en, name_fr, name_es, name_de
 @name: '[name_en]';
