@@ -20,8 +20,8 @@ interactivity_layer: ''
 layers: null
 maxzoom: 22
 minzoom: 0
-name: Amtrak 188 speeds
-source: "mapbox:///mapbox.mapbox-streets-v5,enf.bezpk3xr"
+name: Amtrak Northeast Regional speeds
+source: "mapbox:///mapbox.mapbox-streets-v5,enf.adrvygb9,enf.gcvdkj4i"
 styles: 
   - style.mss
   - labels.mss

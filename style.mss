@@ -1,23 +1,4 @@
-#amtrak2 {
-   [TrainNum='188'] {
-  //[RouteName='Northeast Regional'] {
-    //[TrainNum != '188'] {
-  
-     marker-width: 20;
-     marker-opacity: .05;
-     marker-allow-overlap: true;
-     marker-ignore-placement: true;
-  text-name: '[Velocity]';
-  text-face-name: @sans_bold;
-  text-fill: #000;
-  text-size: 10;
-  //text-size: 20;
-  //text-avoid-edges: true;
-  text-placement-type: list;
-      //text-allow-overlap: true;
 
-   }
-}
 
 
 #amtrak512all {
@@ -27,9 +8,27 @@
   
      marker-width: [sqrt]*[sqrt]*.5;
   [zoom <= 10] { marker-width: [sqrt]*[sqrt]*.2; }
-     marker-opacity: .05;
+     marker-opacity: .2;
      marker-allow-overlap: true;
      marker-ignore-placement: true;
+
+  //text-size: 20;
+  //text-avoid-edges: true;
+  //text-placement-type: list;
+      //text-allow-overlap: true;
+[TrainNum='188'] {
+      marker-fill: #FF0000;
+      marker-width: 0;
+ 
+   }
+    }
+}
+
+#amtrak512all {
+   
+  [RouteName='Northeast Regional'] {
+    //[TrainNum != '188'] {
+  
   text-name: '[Velocity]';
   text-face-name: @sans_bold;
   text-fill: #000;
@@ -39,16 +38,28 @@
   //text-placement-type: list;
       //text-allow-overlap: true;
 [TrainNum='188'] {
+           marker-width: [sqrt]*[sqrt]*.5;
+  [zoom <= 10] { marker-width: [sqrt]*[sqrt]*.2; }
+
+     marker-allow-overlap: true;
+     marker-ignore-placement: true;
+      //marker-line-width: 0;
+
+      
       marker-fill: #FF0000;
-      marker-opacity: 1.000;
-      text-dy: 40;
+      marker-opacity: .75;
+      text-dy: -35;
       text-size: 20;
       text-label-position-tolerance: 100;
-      //text-allow-overlap: true;
-      [Velocity='106'] { text-dy: -40; }
+      [zoom >= 11][Velocity != '0'] { text-allow-overlap: true;}
+      [zoom <= 10] { text-dy: -20; }
+      text-halo-fill: #fff;
+      text-halo-radius: 3;
+      //[Velocity='106'] { text-dy: -35; }
    }
     }
 }
+
 // Languages: name (local), name_en, name_fr, name_es, name_de
 @name: '[name_en]';
 

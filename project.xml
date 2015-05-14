@@ -9,24 +9,14 @@
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[Amtrak 188 speeds]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v5,enf.bezpk3xr]]></Parameter>
+  <Parameter name="name"><![CDATA[Amtrak Northeast Regional speeds]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v5,enf.adrvygb9,enf.gcvdkj4i]]></Parameter>
 </Parameters>
 
 
 <Style name="landuse" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'park')</Filter>
-    <PolygonSymbolizer fill="#e2e2e2" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'park')</Filter>
-    <PolygonSymbolizer fill="#e6e6e6" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
     <Filter>([class] = 'wood')</Filter>
     <PolygonSymbolizer fill="#e2e2e2" />
   </Rule>
@@ -46,11 +36,21 @@
     <PolygonSymbolizer fill="#e6e6e6" />
   </Rule>
   <Rule>
-    <Filter>([class] = 'school')</Filter>
-    <PolygonSymbolizer fill="#efefef" />
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'park')</Filter>
+    <PolygonSymbolizer fill="#e2e2e2" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'park')</Filter>
+    <PolygonSymbolizer fill="#e6e6e6" />
   </Rule>
   <Rule>
     <Filter>([class] = 'hospital')</Filter>
+    <PolygonSymbolizer fill="#efefef" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'school')</Filter>
     <PolygonSymbolizer fill="#efefef" />
   </Rule>
   <Rule>
@@ -58,11 +58,11 @@
     <PolygonSymbolizer fill="#efefef" />
   </Rule>
   <Rule>
-    <Filter>([class] = 'sand')</Filter>
+    <Filter>([class] = 'pitch')</Filter>
     <PolygonSymbolizer fill="#d6d6d6" />
   </Rule>
   <Rule>
-    <Filter>([class] = 'pitch')</Filter>
+    <Filter>([class] = 'sand')</Filter>
     <PolygonSymbolizer fill="#d6d6d6" />
   </Rule>
 </Style>
@@ -3486,44 +3486,48 @@
 
 <Style name="amtrak512all" filter-mode="first">
   <Rule>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188') and ([Velocity] = '106')</Filter>
-    <MarkersSymbolizer fill="#ff0000" opacity="1" width="[sqrt]*[sqrt]*0.2" allow-overlap="true" ignore-placement="true" />
-    <TextSymbolizer dy="-40" size="20" label-position-tolerance="100" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188') and ([Velocity] != '0')</Filter>
+    <TextSymbolizer allow-overlap="true" dy="-35" size="20" label-position-tolerance="100" halo-fill="#ffffff" halo-radius="3" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.5" allow-overlap="true" ignore-placement="true" fill="#ff0000" opacity="0.75" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188') and ([Velocity] = '106')</Filter>
-    <MarkersSymbolizer fill="#ff0000" opacity="1" width="[sqrt]*[sqrt]*0.5" allow-overlap="true" ignore-placement="true" />
-    <TextSymbolizer dy="-40" size="20" label-position-tolerance="100" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MinScaleDenominator>400000</MinScaleDenominator>
+    <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188') and ([Velocity] != '0')</Filter>
+    <TextSymbolizer dy="-20" size="20" label-position-tolerance="100" halo-fill="#ffffff" halo-radius="3" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.2" allow-overlap="true" ignore-placement="true" fill="#ff0000" opacity="0.75" />
   </Rule>
   <Rule>
     <MinScaleDenominator>400000</MinScaleDenominator>
     <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188')</Filter>
-    <MarkersSymbolizer fill="#ff0000" opacity="1" width="[sqrt]*[sqrt]*0.2" allow-overlap="true" ignore-placement="true" />
-    <TextSymbolizer dy="40" size="20" label-position-tolerance="100" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <TextSymbolizer dy="-20" size="20" label-position-tolerance="100" halo-fill="#ffffff" halo-radius="3" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.2" allow-overlap="true" ignore-placement="true" fill="#ff0000" opacity="0.75" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([RouteName] = 'Northeast Regional') and ([TrainNum] = '188')</Filter>
-    <MarkersSymbolizer fill="#ff0000" opacity="1" width="[sqrt]*[sqrt]*0.5" allow-overlap="true" ignore-placement="true" />
-    <TextSymbolizer dy="40" size="20" label-position-tolerance="100" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <TextSymbolizer dy="-35" size="20" label-position-tolerance="100" halo-fill="#ffffff" halo-radius="3" face-name="Arial Unicode MS Bold" fill="#000000" ><![CDATA[[Velocity]]]></TextSymbolizer>
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.5" allow-overlap="true" ignore-placement="true" fill="#ff0000" opacity="0.75" />
   </Rule>
   <Rule>
     <MinScaleDenominator>400000</MinScaleDenominator>
     <Filter>([RouteName] = 'Northeast Regional')</Filter>
-    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.2" opacity="0.05" allow-overlap="true" ignore-placement="true" />
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.2" opacity="0.2" allow-overlap="true" ignore-placement="true" />
     <TextSymbolizer face-name="Arial Unicode MS Bold" fill="#000000" size="10" ><![CDATA[[Velocity]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>400000</MaxScaleDenominator>
     <Filter>([RouteName] = 'Northeast Regional')</Filter>
-    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.5" opacity="0.05" allow-overlap="true" ignore-placement="true" />
+    <MarkersSymbolizer width="[sqrt]*[sqrt]*0.5" opacity="0.2" allow-overlap="true" ignore-placement="true" />
     <TextSymbolizer face-name="Arial Unicode MS Bold" fill="#000000" size="10" ><![CDATA[[Velocity]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Layer name="amtrak512all"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>amtrak512all</StyleName>  </Layer>
+
+<Layer name="amtrak512all2"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
 
 </Map>
